@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo 'yo';
 });
+
+// Catch all not defined
+Route::any('/{any}', function (){
+    echo 'There is nothing here.';
+})->where('any', '.*');
+
